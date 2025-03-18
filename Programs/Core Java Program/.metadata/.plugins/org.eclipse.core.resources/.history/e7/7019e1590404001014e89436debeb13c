@@ -1,0 +1,19 @@
+package com;
+
+public class TypeCasting {
+
+	public static void main(String[] args) {
+		
+		byte a=10;		// -128 to 127
+		short b=a;		// implicit type casting 
+		
+		
+		
+		short c=10;
+		byte d = c;
+		//
+		//int age = 21;
+		//byte age = 21;
+	}
+
+}
