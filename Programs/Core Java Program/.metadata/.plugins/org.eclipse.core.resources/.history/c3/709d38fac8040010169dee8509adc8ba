@@ -1,0 +1,15 @@
+package com;
+
+public class ArrayExamples {
+
+	public static void main(String[] args) {
+	int a;
+	int []abc;	// array declaration 
+	int []num= {10,20,30,40,50,60};	// array initiliazation 
+	System.out.println(num);
+	System.out.println(num[0]);
+	System.out.println(num[1]);
+	System.out.println("size of array is "+num.length);
+	}
+
+}

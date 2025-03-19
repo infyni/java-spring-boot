@@ -1,0 +1,10 @@
+package com;
+
+public class ScannerDemo {
+
+	public static void main(String[] args) {
+		// syntax to create Scanner class object 
+		Scanner obj = new Scanner(System.in);
+	}
+
+}
