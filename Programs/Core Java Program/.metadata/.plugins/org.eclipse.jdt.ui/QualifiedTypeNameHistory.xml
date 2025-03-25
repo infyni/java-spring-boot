@@ -5,4 +5,6 @@
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="inheritance.Employee"/>
     <fullyQualifiedTypeName name="inheritance.Manager"/>
+    <fullyQualifiedTypeName name="polymorophism.Operation"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
 </qualifiedTypeNameHistroy>
