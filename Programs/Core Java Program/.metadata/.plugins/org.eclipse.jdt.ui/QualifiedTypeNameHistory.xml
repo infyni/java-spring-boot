@@ -7,4 +7,8 @@
     <fullyQualifiedTypeName name="inheritance.Manager"/>
     <fullyQualifiedTypeName name="polymorophism.Operation"/>
     <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="statickeyword.Simple"/>
+    <fullyQualifiedTypeName name="statickeyword.Employee"/>
+    <fullyQualifiedTypeName name="education.college.Attendance"/>
+    <fullyQualifiedTypeName name="education.school.Attendance"/>
 </qualifiedTypeNameHistroy>
