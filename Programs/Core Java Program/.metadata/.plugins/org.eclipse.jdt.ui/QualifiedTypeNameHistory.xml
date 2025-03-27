@@ -11,4 +11,8 @@
     <fullyQualifiedTypeName name="statickeyword.Employee"/>
     <fullyQualifiedTypeName name="education.college.Attendance"/>
     <fullyQualifiedTypeName name="education.school.Attendance"/>
+    <fullyQualifiedTypeName name="com.bean.Manager"/>
+    <fullyQualifiedTypeName name="com.bean.Employee"/>
+    <fullyQualifiedTypeName name="com.entity.Developer"/>
+    <fullyQualifiedTypeName name="com.service.Department"/>
 </qualifiedTypeNameHistroy>
