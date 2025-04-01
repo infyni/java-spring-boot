@@ -8,7 +8,7 @@ public class EmployeeTest {
 		System.out.println("main class method");
 	}
 	public static void main(String[] args) {
-		dis();
+		//dis();
 		// TODO Auto-generated method stub
 	Scanner sc = new Scanner(System.in);
 	System.out.println("how many employee data do you want to store");
