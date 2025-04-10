@@ -1,0 +1,812 @@
+Java version 
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+  </properties>
+
+H2 in memory database 
+
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <version>2.2.222</version>
+    <scope>runtime</scope>
+</dependency>
+
+My SQL Connector for 8.x version 
+
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.16</version>
+</dependency>
+
+
+MySQL Connector for 5.x version 
+
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>5.1.45</version>
+</dependency>
+
+
+Derby Database 
+
+<dependency>
+    <groupId>org.apache.derby</groupId>
+    <artifactId>derby</artifactId>
+    <version>10.13.1.1</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.derby</groupId>
+    <artifactId>derbyclient</artifactId>
+    <version>10.13.1.1</version>
+</dependency>
+
+Oracle Database 
+
+<dependency>
+    <groupId>com.oracle.ojdbc</groupId>
+    <artifactId>ojdbc10</artifactId>
+    <version>19.3.0.0</version>
+</dependency>
+
+Hibernate Dependency 
+
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>5.5.6.Final</version>
+</dependency>
+
+or 
+
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>5.5.2.Final</version>
+</dependency>
+
+
+JPA 2.0 or 2.1 Stable 
+
+<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
+
+<dependency>
+    <groupId>org.eclipse.persistence</groupId>
+    <artifactId>javax.persistence</artifactId>
+    <version>2.1.0</version>
+</dependency>
+
+
+                                <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-entitymanager</artifactId>
+    <version>5.5.4.Final</version>
+</dependency>
+
+<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+persistence.xml file code 
+
+<persistence-unit name="JpaDemo" transaction-type="RESOURCE_LOCAL">
+		<class>com.Employee</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mydb"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="root@123"/>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+		</properties>
+	</persistence-unit>
+
+JSTL dependencies 
+
+<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
+
+
+JAX_RS 2.x dependencies 
+
+    <dependencies>
+
+<dependency>
+    <groupId>javax.activation</groupId>
+    <artifactId>activation</artifactId>
+    <version>1.1.1</version>
+</dependency>
+<dependency>
+<groupId>org.glassfish.jersey.core</groupId>
+<artifactId>jersey-server</artifactId>
+<version>2.27</version>
+</dependency>
+<dependency>
+<groupId>org.glassfish.jersey.containers</groupId>
+<artifactId>jersey-container-servlet</artifactId>
+<version>2.27</version>
+</dependency>
+
+<dependency>
+<groupId>org.glassfish.jersey.inject</groupId>
+<artifactId>jersey-hk2</artifactId>
+<version>2.27</version>
+</dependency>     
+  
+  
+  <dependency>
+    <groupId>javax.xml.bind</groupId>
+    <artifactId>jaxb-api</artifactId>
+    <version>2.3.0</version>
+</dependency>
+
+<dependency>
+    <groupId>org.glassfish.jersey.media</groupId>
+    <artifactId>jersey-media-json-jackson</artifactId>
+    <version>2.22.2</version>
+</dependency>
+  
+  </dependencies>
+
+web.xml file 
+
+<servlet>
+<servlet-name>Test Jersey Service</servlet-name>
+<!-- For Jersey 2.x -->
+<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+<init-param>
+
+<param-name>jersey.config.server.provider.packages</param-name>
+<param-value>com.controller</param-value>
+</init-param>
+<load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+<servlet-name>Test Jersey Service </servlet-name>
+<url-pattern>/rest/*</url-pattern>
+</servlet-mapping>
+
+
+cors enable 
+
+
+@Provider
+public class CorsFilter implements ContainerResponseFilter{
+
+	@Override
+	public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext)
+			throws IOException {
+		 responseContext.getHeaders().add(
+		            "Access-Control-Allow-Origin", "*");
+		 responseContext.getHeaders().add(
+		            "Access-Control-Allow-Methods", 
+		            "GET, POST, PUT, DELETE, OPTIONS, HEAD");
+		
+	}
+}
+
+Spring core 
+
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-core</artifactId>
+    <version>5.2.12.RELEASE</version>
+</dependency>
+
+Spring context 
+
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>5.2.12.RELEASE</version>
+</dependency>
+
+
+
+
+@PostConstruct and @PreDestroy dependency 
+
+<dependency>
+  <groupId>javax.annotation</groupId>
+  <artifactId>javax.annotation-api</artifactId>
+  <version>1.3.2</version>
+</dependency>
+
+
+Spring JDBC 
+
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-jdbc</artifactId>
+    <version>5.2.12.RELEASE</version>
+</dependency>
+
+
+spring mvc 
+
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-webmvc</artifactId>
+    <version>5.2.12.RELEASE</version>
+</dependency>
+
+
+spring aop 
+
+
+	<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-aop</artifactId>
+    <version>5.2.12.RELEASE</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-aspects</artifactId>
+    <version>5.2.12.RELEASE</version>
+</dependency>
+
+
+spring test 
+
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-test</artifactId>
+    <version>5.2.12.RELEASE</version>
+</dependency>
+
+
+spring orm (spring with hibernate or jpa)
+
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-orm</artifactId>
+    <version>5.2.12.RELEASE</version>
+</dependency>
+
+
+
+
+<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="ds" scope="singleton">
+	<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+	<property name="url" value="jdbc:mysql://localhost:3306/mvc"></property>
+	<property name="username" value="root"></property>
+	<property name="password" value="root@123"></property>
+</bean>
+
+JDBC Template 
+
+<bean class="org.springframework.jdbc.core.JdbcTemplate" id="jdbcTemplate" scope="singleton">
+	<property name="dataSource" ref="ds"></property>
+</bean>
+
+web.xml for DispatcherServlet 
+
+<servlet>
+  	<servlet-name>dispatcher</servlet-name>
+  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  		<servlet-name>dispatcher</servlet-name>
+  		<url-pattern>*.spring</url-pattern>
+  </servlet-mapping>
+
+or 
+
+
+<servlet>
+  	<servlet-name>dispatcher</servlet-name>
+  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  		<servlet-name>dispatcher</servlet-name>
+  		<url-pattern>/</url-pattern>
+  </servlet-mapping>
+
+spring MVC with Hibernate configuration 
+
+<bean class="org.springframework.orm.hibernate5.LocalSessionFactoryBean"  id="sf" scope="singleton">
+	<property name="dataSource" ref="ds"></property>
+	
+	<property name="annotatedClasses">
+	<list>
+		<value>com.bean.Product</value>
+	</list>
+	</property>
+	
+	<property name="hibernateProperties">
+		<props>
+			<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+		</props>
+	</property>
+	
+</bean>
+
+spring MVC with jpa configuration 
+
+<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+	<property name="url" value="jdbc:oracle:thin:@localhost:1521/ORCL"></property>
+	<property name="username" value="system"></property>
+	<property name="password" value="Welcome123"></property>
+</bean>
+
+<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+<property name="dataSource" ref="ds"></property>
+<property name="jpaVendorAdapter" ref="jpaVendor"></property>
+<property name="packagesToScan" value="com.bean"></property>
+</bean>
+
+<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" id="jpaVendor">
+	
+</bean>
+
+Two dependenices for convert java object to json or xml 
+
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.12.4</version>
+</dependency>
+
+
+<dependency>
+    <groupId>javax.xml.bind</groupId>
+    <artifactId>jaxb-api</artifactId>
+    <version>2.2.12</version>
+</dependency>
+
+or 
+
+<!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+<dependency>
+    <groupId>javax.xml.bind</groupId>
+    <artifactId>jaxb-api</artifactId>
+    <version>2.3.0</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl -->
+<dependency>
+    <groupId>com.sun.xml.bind</groupId>
+    <artifactId>jaxb-impl</artifactId>
+    <version>2.0.1</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/javax.activation/activation -->
+<dependency>
+    <groupId>javax.activation</groupId>
+    <artifactId>activation</artifactId>
+    <version>1.1</version>
+</dependency>
+
+Spring boot basic starter (non web starter)
+
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter</artifactId>
+    <version>2.5.2</version>
+</dependency>
+
+
+Spring boot web starter 
+
+
+<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+    <version>2.5.2</version>
+</dependency>
+
+spring boot jdbc starter 
+
+
+
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-jdbc</artifactId>
+</dependency>
+
+
+Thymeleaf 
+
+<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    <version>2.5.2</version>
+</dependency>
+
+
+
+spring boot jpa starter 
+
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-data-jpa</artifactId>
+	<version>2.5.2</version>
+</dependency>
+
+
+spring boot with jsp jasper  (View as JSP in Spring boot)
+
+<!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper -->
+<dependency>
+    <groupId>org.apache.tomcat.embed</groupId>
+    <artifactId>tomcat-embed-jasper</artifactId>
+    <version>9.0.38</version>
+</dependency>
+
+
+spring boot in jsp starter 
+
+<dependency>
+    <groupId>org.apache.tomcat.embed</groupId>
+    <artifactId>tomcat-embed-jasper</artifactId>
+	
+</dependency>
+
+ <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-tomcat</artifactId>
+</dependency>
+
+jstl starter 
+
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+</dependency>
+
+
+view resolver 
+
+spring.mvc.view.prefix: /WEB-INF/jsp/
+spring.mvc.view.suffix: .jsp
+
+or 
+
+spring.mvc.view.prefix: ./
+spring.mvc.view.suffix: .jsp
+
+
+@GetMapping(value="loginPage")
+public String sayHello() {
+
+	return "login";
+}
+
+Or 
+
+@GetMapping(value="loginPage")
+public ModelAndView sayHello() {
+	ModelAndView mav = new ModelAndView();
+	mav.setViewName("login.jsp");
+	return mav;
+}
+
+
+
+jwt token 
+
+	<dependency>
+		<groupId>io.jsonwebtoken</groupId>
+		<artifactId>jjwt</artifactId>
+		<version>0.9.1</version>
+	</dependency>
+
+
+jwt token with 3.x version 
+
+			<dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-api</artifactId>
+        <version>0.11.5</version>
+    </dependency>
+    <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-impl</artifactId>
+        <version>0.11.5</version>
+        <scope>runtime</scope>
+    </dependency>
+    <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-jackson</artifactId>
+        <version>0.11.5</version>
+        <scope>runtime</scope>
+    </dependency>
+
+
+
+database details in application.properties file with h2 database 
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.username=sa
+spring.datasource.password=test
+spring.jpa.hibernate.ddl-auto=update 
+spring.h2.console.enabled=true
+
+
+
+database details in application.properties file 
+
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/mydb
+spring.datasource.username=root
+spring.datasource.password=root@123
+spring.jpa.hibernate.ddl-auto=update 
+
+
+database details for mongo db in application.properties file 
+
+spring.data.mongodb.database=testdb
+spring.data.mongodb.uri=mongodb://localhost:27017/testdb
+spring.data.mongodb.host=localhost
+spring.data.mongodb.port=27017
+# spring.data.mongodb.username=myUser
+# spring.data.mongodb.password=myPassword
+
+
+database details in application.properties file 
+
+jwt.secret = myKey
+jwt.expirationDateInMs=600*5
+spring.datasource.url=jdbc:mysql://localhost:3306/jwt
+spring.datasource.username=root
+spring.datasource.password=root@123
+spring.jpa.hibernate.ddl-auto=update
+
+
+database details in application.properties file with docker compose 
+
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://mysqldb/mydb
+spring.datasource.username=root
+spring.datasource.password=root
+spring.jpa.hibernate.ddl-auto=update 
+
+reactive db configuration
+
+spring.application.name=product-micro-service-producer
+server.port=9191
+spring.r2dbc.url=r2dbc:mysql://localhost:3306/mydb1?serverZoneId=IST
+spring.r2dbc.username=root
+spring.r2dbc.password=root@123
+
+spring security custom username and password 
+
+application.properties 
+
+spring.security.user.name=Akash
+spring.security.user.password=123
+
+
+with security configuration 
+
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/securitydb?createDatabaseIfNotExist=true
+spring.datasource.username=root
+spring.datasource.password=root@123
+spring.jpa.hibernate.ddl-auto=update
+
+spring boot with redis 
+
+spring.cache.type=redis
+spring.redis.host=localhost
+spring.redis.port=6379
+spring.redis.password=yourpassword (if required)
+
+
+#spring boot actuator 
+# Enable all actuator endpoints
+management.endpoints.web.exposure.include=*
+# Customize the health check information
+management.endpoint.health.show-details=always
+# Enable metrics collection
+management.metrics.enabled=true
+info.app.name=Spring Actuator Demo
+info.app.description=Demo application for Spring Boot Actuator
+info.app.version=1.0.0
+
+
+swagger dependency 
+
+this dependency provide the api 
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger2</artifactId>
+    <version>2.10.5</version>
+</dependency>
+
+
+this dependency provide the ui  
+	
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger-ui</artifactId>
+    <version>2.10.5</version>
+</dependency>
+
+
+open UI 
+
+		<dependency>
+    		<groupId>org.springdoc</groupId>
+    		<artifactId>springdoc-openapi-ui</artifactId>
+    		<version>1.6.4</version>
+		</dependency>
+
+Eureka Server application.properties 
+
+server.port=8761
+eureka.client.register-with-eureka=false
+eureka.client.fetch-registry=false
+
+
+
+junit 4.x dependencies 
+
+<!-- https://mvnrepository.com/artifact/junit/junit -->
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.13.1</version>
+    <scope>test</scope>
+</dependency>
+
+
+junit mockio 
+
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>4.2.0</version>
+    <scope>test</scope>
+</dependency>
+
+
+junit 5 dependencies 
+
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-params</artifactId>
+    <version>5.8.2</version>
+    <scope>test</scope>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.junit.vintage/junit-vintage-engine -->
+<dependency>
+    <groupId>org.junit.vintage</groupId>
+    <artifactId>junit-vintage-engine</artifactId>
+    <version>5.8.2</version>
+    <scope>test</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-runner -->
+<dependency>
+    <groupId>org.junit.platform</groupId>
+    <artifactId>junit-platform-runner</artifactId>
+    <version>1.8.2</version>
+    <scope>test</scope>
+</dependency>
+
+<dependency>
+    <groupId>org.junit.platform</groupId>
+    <artifactId>junit-platform-suite-engine</artifactId>
+    <version>1.8.1</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter -->
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-junit-jupiter</artifactId>
+    <version>4.0.0</version>
+    <scope>test</scope>
+</dependency>
+
+
+spring boot testing starter 
+
+<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+    <scope>test</scope>
+</dependency>
+
+
+test ng 
+
+<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.5</version>
+    <scope>test</scope>
+</dependency>
+
+test ng with mockito 
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-testng</artifactId>
+    <version>0.4.13</version>
+    <scope>test</scope>
+</dependency>
+
+Selenium dependency 
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.2.1</version>
+</dependency>
+
+
+core reactive 
+
+  <dependency>
+      <groupId>io.projectreactor</groupId>
+      <artifactId>reactor-core</artifactId>
+      <version>3.5.1</version>
+    </dependency>
+
+
+core java kafka dependencies 
+
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>1.7.36</version>
+</dependency>
+
+<dependency>
+    <groupId>org.apache.kafka</groupId>
+    <artifactId>kafka_2.13</artifactId>
+    <version>3.2.3</version>
+</dependency>
+
+ <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.14.0</version>
+    </dependency>
+
+
+Kafka with spring boot 
+
+# Kafka broker address
+spring.kafka.bootstrap-servers=localhost:9092
+
+# Consumer configuration
+spring.kafka.consumer.group-id=my-group
+spring.kafka.consumer.auto-offset-reset=earliest
+spring.kafka.consumer.enable-auto-commit=true
+spring.kafka.consumer.key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
+spring.kafka.consumer.value-deserializer=org.apache.kafka.common.serialization.StringDeserializer
+
+# Producer configuration
+spring.kafka.producer.key-serializer=org.apache.kafka.common.serialization.StringSerializer
+spring.kafka.producer.value-serializer=org.apache.kafka.common.serialization.StringSerializer
+
+
+
+send object through program 
+
+spring.kafka.consumer.bootstrap-servers= localhost:9092
+spring.kafka.consumer.group-id= group-id
+#spring.kafka.consumer.auto-offset-reset= earliest
+spring.kafka.consumer.key-deserializer= org.apache.kafka.common.serialization.StringDeserializer
+spring.kafka.consumer.value-deserializer= org.springframework.kafka.support.serializer.JsonDeserializer
+spring.kafka.consumer.properties.spring.json.trusted.packages=*
+
+spring.kafka.producer.bootstrap-servers= localhost:9092
+spring.kafka.producer.key-serializer= org.apache.kafka.common.serialization.StringSerializer
+spring.kafka.producer.value-serializer= org.springframework.kafka.support.serializer.JsonSerializer
+
