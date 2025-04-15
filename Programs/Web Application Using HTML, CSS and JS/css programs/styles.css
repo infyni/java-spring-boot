@@ -1,0 +1,14 @@
+div{
+    background-color: yellow;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color: blue;
+    text-align: center;
+}
+p{
+    background-color: lightblue;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color: orange;
+    text-align: center;
+}
