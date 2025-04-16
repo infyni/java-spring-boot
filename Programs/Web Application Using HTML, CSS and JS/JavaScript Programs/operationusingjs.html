@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        var con;
+        var x,y,add,sub,mul,div;
+        do{
+            alert("1:Add, 2:Subtract, 3:Multiply, 4:Divide");
+            var choice = eval(prompt("Enter your choice"));
+            switch(choice){
+                case 1 : alert("Addition operation")
+                        x = eval(prompt("Enter the value of x"));
+                        y = eval(prompt("Enter the value of y"));
+                        add = x + y;
+                        alert("Addition is "+add);
+                        break;
+                case 2 : alert("Subtract operation")
+                        x = eval(prompt("Enter the value of x"));
+                        y = eval(prompt("Enter the value of y"));
+                        sub = x - y;
+                        alert("Subtract is "+sub);
+                        break;  
+                case 3 : alert("Mul operation")
+                        x = eval(prompt("Enter the value of x"));
+                        y = eval(prompt("Enter the value of y"));
+                        mul = x * y;
+                        alert("Mul is "+mul);
+                        break;
+                case 4 : alert("div operation")
+                        x = eval(prompt("Enter the value of x"));
+                        y = eval(prompt("Enter the value of y"));
+                        div = x / y;
+                        alert("Div is "+div);
+                        break;
+                default : alert("Invalid choice")
+                        break;
+            }
+            con = confirm("Do you want to continue?");
+        }while(con);
+        alert("Thank you for using our service!");
+    </script>
+</body>
+</html>
