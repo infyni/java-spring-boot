@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Event Example</h2>
+    <input type="button" value="Click Here" onclick="showAlert()"/>
+    <br/>
+    <input type="text" name="n1" id="m1"/><br/>
+    Result :<input type=""text" name="n2" id="m2"/><br/>
+    <div id="result">
+
+    </div>
+    <input type="button" value="Read Data" onclick="readData()"/>
+    <script type="text/JavaScript">
+        function showAlert() {
+            alert("Button clicked!");
+        }
+        function readData() {
+            // read the value of h2 tag which does not have id attribute and name attribute
+            let t2TagValue = document.getElementsByTagName("h2")[0].innerHTML;
+            alert(t2TagValue);
+            // read the value of text field using name attribute 
+            var name1 = document.getElementsByName("n1")[0].value;
+            //alert("Welcome user "+name1);
+            document.getElementsByName("n2")[0].value=name1;    // set value in text field 
+            document.getElementById("result").innerHTML=name1;  // set the value in div tag 
+            document.getElementsByName("n1")[0].value="";
+            // read the value of text field using id attribute 
+            var name2 = document.getElementById("m1").value;
+            //alert("Welcome user "+name2);
+        }
+    </script>
+</body>
+</html>
