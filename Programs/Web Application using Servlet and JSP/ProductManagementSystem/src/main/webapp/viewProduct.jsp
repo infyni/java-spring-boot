@@ -17,9 +17,11 @@
 		<th>Product Price</th>
 	</tr>
 <%
-Object obj = request.getAttribute("info");	// get the value from request scope 
+//Object obj = request.getAttribute("info");	// get the value from request scope 
+Object obj = session.getAttribute("info");	// get the value from request scope 
 out.println(obj);
-Object data = request.getAttribute("listOfProducts");
+//Object data = request.getAttribute("listOfProducts");
+Object data = session.getAttribute("listOfProducts");
 List<Product> listOfProduct = (List<Product>)data;		// type casting 
 Iterator<Product> li = listOfProduct.iterator();
 while(li.hasNext()){

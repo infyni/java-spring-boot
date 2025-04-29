@@ -11,7 +11,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import com.mysql.cj.Session;
 import com.pms.bean.Product;
 import com.pms.service.ProductService;
 
@@ -49,11 +51,16 @@ public class ViewProductController extends HttpServlet {
 //			pw.println("</tr>");
 //		}
 //		pw.println("</table>");
-		request.setAttribute("info", msg);		// set the value in request scope 
-		request.setAttribute("listOfProducts", listOfProdut);	// set the list of product in request scope.
-		RequestDispatcher rd = request.getRequestDispatcher("viewProduct.jsp");
+		HttpSession hs = request.getSession();
+		//request.setAttribute("info", msg);		// set the value in request scope 
+		//request.setAttribute("listOfProducts", listOfProdut);	// set the list of product in request scope.
+		hs.setAttribute("info", msg);
+		hs.setAttribute("listOfProducts", listOfProdut);
+		//RequestDispatcher rd = request.getRequestDispatcher("viewProduct.jsp");
 		response.setContentType("text/html");
-		rd.include(request, response);
+		//rd.forward(request, response);
+		//rd.include(request, response);
+		response.sendRedirect("viewProduct.jsp");
 	}
 
 	/**
