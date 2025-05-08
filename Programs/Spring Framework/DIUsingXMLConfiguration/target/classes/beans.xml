@@ -13,4 +13,31 @@
 	<constructor-arg value="Ravi"></constructor-arg>
 	<constructor-arg value="12000"></constructor-arg>
 </bean>
+
+<bean class="com.Employee" id="emp4">
+	<property name="id" value="101"></property>
+	
+	<property name="salary" value="14000"></property>
+	<property name="name" value="Ajay"></property>
+</bean>
+
+
+<bean class="com.Address" id="add1">
+	<property name="city" value="Bangalore"></property>
+	<property name="state" value="Kar"></property>
+</bean>
+
+<bean class="com.Address" id="add">
+	<property name="city" value="Hyderabad"></property>
+	<property name="state" value="TS"></property>
+</bean>
+
+<bean class="com.Employee" id="emp5" autowire="byName">
+	<property name="id" value="102"></property>
+	<property name="name" value="Mahesh"></property>
+	<property name="salary" value="28000"></property>
+	<!--  <property name="add" ref="add1"></property>-->
+</bean>
+
+
 </beans>

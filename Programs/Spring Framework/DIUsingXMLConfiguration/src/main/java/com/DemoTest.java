@@ -25,14 +25,24 @@ public class DemoTest {
 //	employee4.display();
 	
 	
-	Employee employee4 = (Employee)factory.getBean("emp1");
-	System.out.println(employee4);   // toString method 
+//	Employee employee4 = (Employee)factory.getBean("emp1");
+//	System.out.println(employee4);   // toString method 
+//	
+//	Employee employee5 = (Employee)factory.getBean("emp2");
+//	System.out.println(employee5);   // toString method 
+//	
+//	Employee employee6 = (Employee)factory.getBean("emp3");
+//	System.out.println(employee6);   // toString method 
+//	
+//	Employee employee7 = (Employee)factory.getBean("emp4");
+//	System.out.println(employee7);
 	
-	Employee employee5 = (Employee)factory.getBean("emp2");
-	System.out.println(employee5);   // toString method 
 	
-	Employee employee6 = (Employee)factory.getBean("emp3");
-	System.out.println(employee6);   // toString method 
+	//Address address1 = (Address)factory.getBean("add1");
+	//System.out.println(address1);
+	
+	Employee employee8 = (Employee)factory.getBean("emp5");
+	System.out.println(employee8);
 	}
 
 }
