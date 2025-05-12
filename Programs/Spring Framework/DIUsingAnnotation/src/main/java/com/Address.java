@@ -1,9 +1,11 @@
 package com;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component					// <bean class="com.Address"></bean> by default id is class level using camel naming rule 
+@Scope("prototype")
 public class Address {			// id is address if class is AddressDetails then id is addressDetails
 @Value(value = "Hyderbad")
 private String city;
