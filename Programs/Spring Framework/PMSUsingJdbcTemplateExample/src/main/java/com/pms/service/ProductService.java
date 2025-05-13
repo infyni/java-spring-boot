@@ -1,6 +1,7 @@
 package com.pms.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,7 +26,23 @@ public class ProductService {
 			}
 	}
 	
-	public List<Product> findAllProducts() {
+	public String deleteProduct(int pid) {
+		if(productDao.deleteProduct(pid)>0) {
+			return "product deleted";
+		}else {
+			return "product not present";
+		}
+	}
+	
+	public String updateProduct(Product product) {
+		if(productDao.updateProduct(product)>0) {
+			return "product updated";
+		}else {
+			return "product not present";
+		}
+	}
+	
+	public List<Map<String, Object>> findAllProducts() {
 		return productDao.findAllProducts();
 	}
 }
