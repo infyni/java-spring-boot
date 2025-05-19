@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>Welcome to Spring WEb App</h2>
-<a href="hello">Call to Display1 </a>|
-<a href="hi">Call to Display2 </a>|
-<a href="Login.jsp">Login Page</a>
+<h2>Successfully login!</h2>
 </body>
 </html>
