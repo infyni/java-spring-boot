@@ -5,11 +5,37 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>Spring Boot MVC with Spring Jpa Data</h2>
+	<span th:text="${result}" style="color:red"></span>
 	<h2 th:text="${msg}"></h2>
-	<a href="addProductPage">Add Product</a> |
-	<a href="deleteProductPage">Delete Product</a> |
-	<a href="updateProductPage">Update Product</a> |
-	<a href="findAllProducts">Display all Products</a>
+	
+	<h2>Add Product</h2>
+<form action="#" th:action="@{/addProductInDb}" method="post" th:object="${pp}">
+	<label>PId</label>
+	<input type="number" th:field="*{pid}"/><br/>
+	<label>PName</label>
+	<input type="text" th:field="*{pname}"/><br/>
+	<label>Price</label>
+	<input type="number" th:field="*{price}"/><br/>
+	<input type="submit" value="Store Product"/>
+	<input type="reset" value="reset"/>
+</form>
+	<hr/>
+	
+	<h2>All Product details are </h2>
+<table border="2">
+	<tr>
+		<th>PId</th>
+		<th>PName</th>
+		<th>Price</th>
+		<th>Delete</th>
+	</tr>
+	<tr th:each="product:${products}">
+		<td th:text="${product.pid}"></td>
+		<td th:text="${product.pname}"></td>
+		<td th:text="${product.price}"></td>
+		<td><a th:href="@{/deleteProductFromDb/{pid}(pid=${product.pid})}">Delete</a></td>
+	</tr>
+</table>
+	
 </body>
 </html>
