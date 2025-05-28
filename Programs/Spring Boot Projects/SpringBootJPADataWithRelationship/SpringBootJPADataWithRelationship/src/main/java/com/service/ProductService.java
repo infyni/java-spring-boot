@@ -36,6 +36,18 @@ public class ProductService {
 		}
 	}
 	
+	
+	public Product searchProduct(int pid) {
+		Optional<Product> result = 	productRepository.findById(pid);	// pre defined method 
+		if(result.isPresent()) {
+			Product p = result.get();
+			return p;
+		}else {
+			return null;
+		}
+	}
+	
+	
 	public String updateProduct(Product product) {		// pid and price 
 		Optional<Product> result = 	productRepository.findById(product.getPid());	// pre defined method 
 		if(result.isPresent()) {
