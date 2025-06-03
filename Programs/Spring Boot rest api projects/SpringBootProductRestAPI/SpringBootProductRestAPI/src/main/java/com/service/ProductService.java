@@ -39,4 +39,29 @@ public class ProductService {
 		}
 	}
 	
+	public String updateProduct(Product product) {
+		Optional<Product> result = productRepository.findById(product.getPid());
+		if(result.isPresent()) {
+			Product p = result.get();
+			p.setPrice(product.getPrice());
+			productRepository.saveAndFlush(p);
+			return "Update product price successfully";
+		}else {
+			return "Product is not present";
+		}
+	}
+	
+	public String deleteProduct(int pid) {
+		Optional<Product> result = productRepository.findById(pid);
+		if(result.isPresent()) {
+			productRepository.deleteById(pid);
+			return "Product deleted successfully";
+		}else {
+			return "Product is not present";
+		}
+	}
+	
+	public List<Product> findProductUsingprice(float price){
+		return productRepository.findProductByPrice(price);
+	}
 }

@@ -41,6 +41,14 @@ public class ProductController {
 		return productService.findProduct(productid);
 	}
 	
+	
+	// http://localhost:8080/findProductByPrice/42000
+	
+		@RequestMapping(value = "findProductByPrice/{price}",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+		public List<Product> findProductByPrice(@PathVariable("price") float price) {
+			return productService.findProductUsingprice(price);
+		}
+	
 	// http://localhost:8080/storeProduct
 	// method must be post 
 	// data in the form of json {"pid":101,"pname":"Pen Drive","price":1600}
@@ -53,5 +61,22 @@ public class ProductController {
 		return productService.storeProduct(product);
 	}
 	
+	// http://localhost:8080/updateProduct
+		// method must be put
+		// data in the form of json {"pid":101,"price":1650}
+		// put data always send to request body part
 	
+	@RequestMapping(value = "updateProduct",method = RequestMethod.PUT,consumes = MediaType.APPLICATION_JSON_VALUE)
+	public String updateProduct(@RequestBody Product product) { // @RequestBody annotation is use to extract data from request body 
+		System.out.println(product);   // call toString method make sure override to String method in product class. 
+		//return "ready to store";
+		return productService.updateProduct(product);
+	}
+	
+	// http://localhost:8080/deleteProduct/100
+	
+	@RequestMapping(value = "deleteProduct/{pid}",method = RequestMethod.DELETE)
+	public String deleteProduct(@PathVariable("pid") int productid) {
+		return productService.deleteProduct(productid);
+	}
 }
