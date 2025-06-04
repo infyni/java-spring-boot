@@ -11,6 +11,6 @@ public class SimpleController {
 	
 	@RequestMapping(value = "/",method = RequestMethod.GET)
 	public String firstController() {
-		return "Welcome to Spring boot micro service controller";
+		return "Welcome to Spring boot first micro service controller";
 	}
 }
