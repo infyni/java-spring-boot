@@ -14,7 +14,7 @@ public class AccountMicroServicveApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AccountMicroServicveApplication.class, args);
-		System.out.println("Account micro service up on port number 8282");
+		System.out.println("Account micro service up on port number ");
 	}
 
 }
